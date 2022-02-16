@@ -1,7 +1,6 @@
-# curriculum-databases-projects-template
+# vet_clinic DATABASE
 
-> This template should be used for database related projects at Microverse.
-> Generate your own repository, update this README and edit all files content while working on projects. You should not be adding any new files unless asked otherwise.
+>Database vet_clinic has been created with one table, and a table with 5columns (id, name, date_of_birth, escape_attemps, neutered, weight_kg) and inserted 4 rows.
 
 
 ## Getting Started
@@ -15,17 +14,12 @@ This repository includes files with plain SQL that can be used to recreate a dat
 
 ## Authors
 
-👤 **Author1**
+👤 **Claude Mucyo**
 
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
+- GitHub: [@Mucyosoda](https://github.com/githubhandle)
+- Twitter: [@claudeMucyo1](https://twitter.com/twitterhandle)
+- LinkedIn: [@claudeMucyo](https://linkedin.com/in/linkedinhandle)
 
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
 
 ## 🤝 Contributing
 
