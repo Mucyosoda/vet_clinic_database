@@ -1,3 +1,7 @@
+# vet_clinic DATABASE
+
+>Database vet_clinic has been created with one table, and a table with 5columns (id, name, date_of_birth, escape_attemps, neutered, weight_kg) and inserted 4 rows.
+
 
 ## Getting Started
 
