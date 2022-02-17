@@ -20,25 +20,27 @@ COMMIT;
 
 BEGIN
 vet_clinic=*# delete from animals;
-DELETE 11
+SELECT * FROM animals;
 ROLLBACK;
+SELECT * FROM animals;
 
 BEGIN
 DELETE FROM animals WHERE date_of_birth > '2022-01-01';
+SELECT * FROM animals;
 SAVEPOINT animalsavepoint;
 UPDATE animals SET weight_kg = weight_kg * -1;
+SELECT * FROM animals;
 ROLLBACK TO SAVEPOINT animalsavepoint;
+SELECT * FROM animals;
 UPDATE animals SET weight_kg = weight_kg * -1 WHERE weight_kg < 0;
+SELECT * FROM animals;
 COMMIT;
+SELECT * FROM animals;
 
 SELECT COUNT(*) FROM animals;
 SELECT COUNT(*) FROM animals WHERE escape_attemps = 0;
 SELECT ROUND(AVG(weight_kg),2) FROM animals;
+SELECT neutered, AVG(escape_attemps) FROM animals GROUP BY neutered;
 SELECT name, escape_attemps FROM animals ORDER BY escape_attemps DESC LIMIT 1;
-SELECT MAX(weight_kg) FROM animals WHERE species = 'digimon';
-SELECT Min(weight_kg) FROM animals WHERE species = 'digimon';
-SELECT Min(weight_kg) FROM animals WHERE species = 'pokemon';
-SELECT Max(weight_kg) FROM animals WHERE species = 'pokemon';
-SELECT AVG(escape_attemps) FROM animals WHERE (date_of_birth BETWEEN '1990-01-01' AND '2000-01-01') AND (species = 'pokemon');
-SELECT AVG(escape_attemps) FROM animals WHERE (date_of_birth BETWEEN '1990-01-01' AND '2000-01-01') AND (species = 'digimon');
-
+SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
+AVG(escape_attemps) FROM animals WHERE date_of_birth >= '1990-01-01' AND date_of_birth <= '2000-12-31' GROUP BY species;
