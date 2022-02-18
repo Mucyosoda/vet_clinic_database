@@ -44,3 +44,16 @@ SELECT neutered, AVG(escape_attemps) FROM animals GROUP BY neutered;
 SELECT name, escape_attemps FROM animals ORDER BY escape_attemps DESC LIMIT 1;
 SELECT species, MIN(weight_kg), MAX(weight_kg) FROM animals GROUP BY species;
 AVG(escape_attemps) FROM animals WHERE date_of_birth >= '1990-01-01' AND date_of_birth <= '2000-12-31' GROUP BY species;
+
+UPDATE animals SET species_id = 2 WHERE name LIKE '%mon';
+UPDATE animals SET species_id = 1 WHERE name NOT LIKE '%mon' ;
+
+/* Write queries using JOIN*/
+
+SELECT name FROM animals JOIN owners ON animals.owner_id = owners.id WHERE owners.full_name ='Melody Pond';
+SELECT * FROM animals JOIN species ON animals.species_id = species.id WHERE species.name = 'Pokemon';
+SELECT owners.full_name, animals.name FROM owners LEFT JOIN animals ON animals.owner_id = owners.id;
+SELECT species.name, COUNT(*) FROM animals JOIN species ON animals.species_id = species.id GROUP BY species.name;
+SELECT * FROM animals JOIN species ON animals.species_id = species.id JOIN owners ON animals.owner_id = owners.id WHERE species.name = 'Digimon' AND owners.full_name ='Jennifer Orwell';
+SELECT * FROM animals JOIN owners ON animals.owner_id = owners.id WHERE animals.escape_attemps = 0 AND owners.full_name = 'Dean Winchester';
+SELECT owners.full_name FROM animals JOIN owners ON owners.id = animals.owner_id GROUP BY owners.full_name ORDER BY COUNT(name) DESC LIMIT 1;
